@@ -12,4 +12,12 @@ import java.util.List;
  **/
 public interface DepartmentService {
     List<Department> selectAll();
+
+    /**
+     * 新增院系
+     *
+     * @param department 入参
+     * @return int
+     */
+    int addDepartment(Department department);
 }
