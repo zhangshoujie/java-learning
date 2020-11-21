@@ -919,53 +919,77 @@ SELECT|sys.sys_config:null
 </ObjectGrants>
     </user>
     <table id="287" parent="8" name="t_admin"/>
-    <table id="288" parent="8" name="t_department"/>
-    <column id="289" parent="287" name="id">
+    <table id="288" parent="8" name="t_class"/>
+    <table id="289" parent="8" name="t_department"/>
+    <column id="290" parent="287" name="id">
       <Position>1</Position>
       <Comment>主键</Comment>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="290" parent="287" name="account">
+    <column id="291" parent="287" name="account">
       <Position>2</Position>
       <Comment>账号</Comment>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="291" parent="287" name="password">
+    <column id="292" parent="287" name="password">
       <Position>3</Position>
       <Comment>密码</Comment>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="292" parent="287" name="admin_name">
+    <column id="293" parent="287" name="admin_name">
       <Position>4</Position>
       <Comment>姓名</Comment>
       <DataType>varchar(20)|0s</DataType>
     </column>
-    <key id="293" parent="287" name="PRIMARY">
+    <key id="294" parent="287" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="294" parent="288" name="id">
+    <column id="295" parent="288" name="id">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
+    </column>
+    <column id="296" parent="288" name="department_id">
+      <Position>2</Position>
+      <Comment>院系id</Comment>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="297" parent="288" name="class_name">
+      <Position>3</Position>
+      <Comment>班级名</Comment>
+      <DataType>varchar(255)|0s</DataType>
+    </column>
+    <key id="298" parent="288" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="299" parent="289" name="id">
       <Position>1</Position>
       <Comment>主键</Comment>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="295" parent="288" name="department_name">
+    <column id="300" parent="289" name="department_name">
       <Position>2</Position>
       <Comment>院系名称</Comment>
       <DataType>varchar(100)|0s</DataType>
     </column>
-    <column id="296" parent="288" name="logo">
+    <column id="301" parent="289" name="logo">
       <Position>3</Position>
       <Comment>院系logo</Comment>
       <DataType>varchar(2555)|0s</DataType>
     </column>
-    <key id="297" parent="288" name="PRIMARY">
+    <key id="302" parent="289" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

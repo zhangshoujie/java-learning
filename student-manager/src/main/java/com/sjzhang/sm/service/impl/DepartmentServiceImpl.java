@@ -38,4 +38,16 @@ public class DepartmentServiceImpl implements DepartmentService {
         }
         return n;
     }
+
+    @Override
+    public int delDepartment(Department department, Integer id) {
+        int n = 0;
+        try {
+            n = departmentDao.deleteDepartment(department,id);
+        } catch (SQLException e) {
+            System.err.print("删除院系信息出现异常");
+        }
+        return n;
+
+    }
 }

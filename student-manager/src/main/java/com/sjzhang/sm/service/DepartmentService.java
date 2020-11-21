@@ -20,4 +20,6 @@ public interface DepartmentService {
      * @return int
      */
     int addDepartment(Department department);
+
+    int delDepartment(Department department, Integer id);
 }
