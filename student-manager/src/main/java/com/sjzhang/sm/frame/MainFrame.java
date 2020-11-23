@@ -5,8 +5,13 @@ import com.sjzhang.sm.entity.Clazz;
 import com.sjzhang.sm.entity.Department;
 import com.sjzhang.sm.factory.ServiceFactory;
 import com.sjzhang.sm.utils.AliOSSUtil;
+import com.sjzhang.sm.vo.StudentVo;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
+import javax.swing.table.TableColumn;
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.awt.*;
 import java.awt.event.FocusAdapter;
@@ -178,9 +183,11 @@ public class MainFrame extends JFrame {
             }
         });
         学生管理button.addActionListener(e -> {
-           c.show(centerPanel, "3");
-           showStudents();
+            c.show(centerPanel,"3");
+            showStudents();
+
         });
+
 
 
     }
@@ -209,10 +216,58 @@ public class MainFrame extends JFrame {
     }
 
     private void showStudents() {
-        CustomPanel cp = new CustomPanel("D:\\java learning\\student-manager\\src\\main\\resources\\img\\shower.PNG");
-        cp.setPreferredSize(new Dimension(350, getHeight()));
-        cp.repaint();
-        studentPanel.add(cp, BorderLayout.EAST);
+        CustomPanel stuInfoPanel = new CustomPanel("D:\\java learning\\student-manager\\src\\main\\resources\\img\\shower.PNG");
+        stuInfoPanel.setPreferredSize(new Dimension(300, 600));
+        JLabel title = new JLabel("学生信息");
+        title.setFont(new Font("楷体", Font.BOLD, 20));
+        title.setForeground(new Color(97, 174, 239));
+        stuInfoPanel.add(title);
+        stuInfoPanel.repaint();
+        studentPanel.add(stuInfoPanel, BorderLayout.EAST);
+
+
+        //获取学生列表数据
+        List<StudentVo> students = ServiceFactory.getStudentServiceInstance().selectAll();
+        //创建表格对象
+        JTable table = new JTable();
+        //创建表格数据模型，并设置表格
+        DefaultTableModel model = new DefaultTableModel();
+        table.setModel(model);
+        //设置表头内容
+        model.setColumnIdentifiers(new String[]{"学号","院系","班级","姓名","性别","地址","手机号","出生日期","头像"});
+        //遍历list，生成object数据
+        for (StudentVo student : students) {
+            Object[] object = new Object[]{
+                    student.getId(),student.getDepartmentName(),student.getClassName(),
+                    student.getStudentName(),student.getGender(),student.getAddress(),
+                    student.getPhone(),student.getBirthday(),student.getAvatar()
+            };
+            //添加到数据模型
+            model.addRow(object);
+        }
+        //设置最后一列不显示在表格中的头像
+        TableColumn tc = table.getColumnModel().getColumn(8);
+        tc.setMaxWidth(0);
+        tc.setMinWidth(0);
+        JTableHeader header = table.getTableHeader();;
+        DefaultTableCellRenderer hr = new DefaultTableCellRenderer();
+        hr.setHorizontalAlignment(JLabel.CENTER);
+        header.setPreferredSize(new Dimension(header.getWidth(), 40));
+        header.setFont(new Font("楷体", Font.PLAIN, 18));
+        table.setRowHeight(35);
+        table.setBackground(new Color(223,241,234));
+        DefaultTableCellRenderer r = new DefaultTableCellRenderer();
+        r.setHorizontalAlignment(JLabel.CENTER);
+        table.setDefaultRenderer(Object.class, r);
+        JScrollPane scrollPane = new JScrollPane(table, ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS,
+                ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+        tablePanel.add(scrollPane);
+        table.getSelectionModel().addListSelectionListener( e -> {
+           int row = table.getSelectedRow();
+           JOptionPane.showMessageDialog(null, table.getValueAt(row, 2).toString() +
+                   table.getValueAt(row, 3).toString());
+        });
+
     }
 
 
@@ -364,6 +419,6 @@ public class MainFrame extends JFrame {
     private void createUIComponents() {
         // TODO: place custom component creation code here
 
-        
+
     }
 }
