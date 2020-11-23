@@ -29,4 +29,9 @@ public class ClazzDaoTest {
 
 
     }
+
+    @Test
+    public void insert() {
+
+    }
 }

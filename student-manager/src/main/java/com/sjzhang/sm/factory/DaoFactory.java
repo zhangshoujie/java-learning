@@ -3,9 +3,11 @@ package com.sjzhang.sm.factory;
 import com.sjzhang.sm.dao.AdminDao;
 import com.sjzhang.sm.dao.ClazzDao;
 import com.sjzhang.sm.dao.DepartmentDao;
+import com.sjzhang.sm.dao.StudentDao;
 import com.sjzhang.sm.dao.impl.AdminDaoImpl;
 import com.sjzhang.sm.dao.impl.ClazzDaoImpl;
 import com.sjzhang.sm.dao.impl.DepartmentDaoImpl;
+import com.sjzhang.sm.dao.impl.StudentDaoImpl;
 import com.sjzhang.sm.entity.Admin;
 import com.sjzhang.sm.entity.Department;
 
@@ -26,5 +28,8 @@ public class DaoFactory {
     }
     public static ClazzDao getClazzDaoInstance() {
         return new ClazzDaoImpl();
+    }
+    public static StudentDao getStudentDaoInstance() {
+        return new StudentDaoImpl();
     }
 }

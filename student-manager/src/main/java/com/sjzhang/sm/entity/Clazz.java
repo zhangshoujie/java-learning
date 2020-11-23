@@ -7,15 +7,18 @@ package com.sjzhang.sm.entity;
  * @Date 2020/11/20
  **/
 public class Clazz {
-    private Integer id;
-    private Integer departmentId;
-    private String className;
     public Integer getId() {
         return id;
     }
+
     public void setId(Integer id) {
         this.id = id;
     }
+
+    private Integer id;
+    private Integer departmentId;
+    private String className;
+
     public Integer getDepartmentId() {
         return departmentId;
     }
@@ -32,4 +35,5 @@ public class Clazz {
     public String toString() {
         return className;
     }
+
 }

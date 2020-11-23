@@ -17,6 +17,7 @@ import java.sql.SQLException;
  **/
 public class AdminDaoImpl implements AdminDao {
 
+    @Override
     public Admin findAdminByAccount(String account) throws SQLException {
         JdbcUtil jdbcUtil = JdbcUtil.getInitJdbcUtil();
         Connection connection = JdbcUtil.getConnection();

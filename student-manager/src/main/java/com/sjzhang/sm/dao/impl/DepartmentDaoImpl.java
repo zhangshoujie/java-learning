@@ -1,6 +1,7 @@
 package com.sjzhang.sm.dao.impl;
 
 import com.sjzhang.sm.dao.DepartmentDao;
+import com.sjzhang.sm.entity.Clazz;
 import com.sjzhang.sm.entity.Department;
 import com.sjzhang.sm.utils.JdbcUtil;
 
