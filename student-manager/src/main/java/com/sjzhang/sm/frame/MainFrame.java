@@ -212,6 +212,7 @@ public class MainFrame extends JFrame {
     private void showConbobox(List<Department> departments) {
         for (Department department : departments) {
             depCombobox.addItem(department);
+            
         }
     }
 

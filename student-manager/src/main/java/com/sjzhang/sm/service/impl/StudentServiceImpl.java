@@ -21,7 +21,7 @@ public class StudentServiceImpl implements StudentService {
     public List<StudentVo> selectAll() {
         List<StudentVo> studentVoList = null;
         try {
-            studentVoList = studentDao.getAll();
+            studentVoList = studentDao.selectAll();
         }catch (SQLException e) {
             System.err.print("查询学生信息出现异常");
         }
