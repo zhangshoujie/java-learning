@@ -1,6 +1,7 @@
 package com.sjzhang.sm.service;
 
 import com.sjzhang.sm.entity.Clazz;
+import com.sjzhang.sm.vo.StudentVo;
 
 import java.util.List;
 
@@ -26,4 +27,6 @@ public interface ClazzService {
     int addClazz(Clazz clazz);
 
     int deleteClazz(Integer id);
+
+    List<Clazz> selectAll();
 }

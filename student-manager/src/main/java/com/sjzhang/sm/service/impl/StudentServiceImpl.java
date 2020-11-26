@@ -27,4 +27,38 @@ public class StudentServiceImpl implements StudentService {
         }
         return studentVoList;
     }
+
+    @Override
+    public List<StudentVo> selectByDepId(int depId) {
+        List<StudentVo> studentVoList = null;
+        try {
+            studentVoList = studentDao.selectByDepId(depId);
+        }catch (SQLException e) {
+            System.err.print("查询院系信息出现异常");
+        }
+        return studentVoList;
+    }
+
+    @Override
+    public List<StudentVo> selectByClassId(int classId) {
+        List<StudentVo> studentVoList = null;
+        try {
+            studentVoList = studentDao.selectByClassId(classId);
+        }catch (SQLException e) {
+            System.err.print("查询班级信息出现异常");
+        }
+        return studentVoList;
+    }
+
+    @Override
+    public List<StudentVo> selectByKeywords(String keywords) {
+        List<StudentVo> studentVoList = null;
+        try {
+            studentVoList = studentDao.selectByKeywords(keywords);
+        }catch (SQLException e) {
+            System.err.print("查询信息出现异常");
+        }
+        return studentVoList;
+    }
+
 }

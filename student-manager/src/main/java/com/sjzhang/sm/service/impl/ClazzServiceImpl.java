@@ -5,6 +5,7 @@ import com.sjzhang.sm.entity.Clazz;
 import com.sjzhang.sm.entity.Department;
 import com.sjzhang.sm.factory.DaoFactory;
 import com.sjzhang.sm.service.ClazzService;
+import com.sjzhang.sm.vo.StudentVo;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -52,5 +53,18 @@ public class ClazzServiceImpl implements ClazzService {
         return n;
 
     }
+
+
+    @Override
+    public List<Clazz> selectAll() {
+        List<Clazz> clazzList = null;
+        try {
+            clazzList = clazzDao.selectAll();
+        }catch (SQLException e) {
+            System.err.print("查询班级信息出现异常");
+        }
+        return clazzList;
+    }
+
 
 }

@@ -2,6 +2,7 @@ package com.sjzhang.sm.service;
 
 import com.sjzhang.sm.vo.StudentVo;
 
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -12,4 +13,10 @@ import java.util.List;
  **/
 public interface StudentService {
     List<StudentVo> selectAll();
+
+    List<StudentVo> selectByDepId(int depId) ;
+
+    List<StudentVo> selectByClassId(int classId) ;
+
+    List<StudentVo> selectByKeywords(String keywords) ;
 }
