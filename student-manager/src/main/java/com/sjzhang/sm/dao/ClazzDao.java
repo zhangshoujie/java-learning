@@ -40,4 +40,7 @@ public interface ClazzDao {
     int insertClazz(Clazz clazz) throws SQLException;
 
     int deleteClazz(Integer id) throws SQLException;
+
+    List<Clazz> selectAll() throws SQLException;
+
 }
