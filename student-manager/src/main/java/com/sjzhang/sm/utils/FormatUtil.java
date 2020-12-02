@@ -15,13 +15,23 @@ public class FormatUtil {
         return sdf.format(date);
     }
 
-    public static String formatGender(int gender) {
+    public static String formatGender(short gender) {
         if (gender == 0) {
             return "保密";
         } else if (gender == 1) {
             return "男";
         } else {
             return "女";
+        }
+    }
+
+    public static Short formatGender(String gender) {
+        if ("保密".equals(gender)) {
+            return 0;
+        } else if ("男".equals(gender)) {
+            return 1;
+        } else {
+            return 2;
         }
     }
 }
