@@ -34,4 +34,8 @@ public class FormatUtil {
             return 2;
         }
     }
+
+    public static java.sql.Date formatAgaDate(String stringCellValue) {
+        return null;
+    }
 }

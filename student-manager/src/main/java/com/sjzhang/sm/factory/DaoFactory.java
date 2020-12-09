@@ -10,6 +10,7 @@ import com.sjzhang.sm.dao.impl.DepartmentDaoImpl;
 import com.sjzhang.sm.dao.impl.StudentDaoImpl;
 import com.sjzhang.sm.entity.Admin;
 import com.sjzhang.sm.entity.Department;
+import com.sjzhang.sm.entity.Student;
 
 /**
  * @ClassName DaoFactory
@@ -32,4 +33,5 @@ public class DaoFactory {
     public static StudentDao getStudentDaoInstance() {
         return new StudentDaoImpl();
     }
+
 }

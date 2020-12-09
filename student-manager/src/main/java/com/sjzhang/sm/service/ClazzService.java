@@ -3,6 +3,7 @@ package com.sjzhang.sm.service;
 import com.sjzhang.sm.entity.Clazz;
 import com.sjzhang.sm.vo.StudentVo;
 
+import javax.net.ssl.SSLSession;
 import java.util.List;
 
 /**
@@ -29,4 +30,6 @@ public interface ClazzService {
     int deleteClazz(Integer id);
 
     List<Clazz> selectAll();
+
+    SSLSession selectByClassName(String cla);
 }

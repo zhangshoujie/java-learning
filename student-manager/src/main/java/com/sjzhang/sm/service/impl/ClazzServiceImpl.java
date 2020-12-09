@@ -7,6 +7,7 @@ import com.sjzhang.sm.factory.DaoFactory;
 import com.sjzhang.sm.service.ClazzService;
 import com.sjzhang.sm.vo.StudentVo;
 
+import javax.net.ssl.SSLSession;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -64,6 +65,11 @@ public class ClazzServiceImpl implements ClazzService {
             System.err.print("查询班级信息出现异常");
         }
         return clazzList;
+    }
+
+    @Override
+    public SSLSession selectByClassName(String cla) {
+        return null;
     }
 
 

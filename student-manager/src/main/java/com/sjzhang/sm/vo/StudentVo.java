@@ -27,4 +27,6 @@ public class StudentVo {
     private Date birthday;
     private String avatar;
     private String address;
+
+
 }

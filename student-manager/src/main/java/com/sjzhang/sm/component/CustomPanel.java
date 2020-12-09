@@ -19,8 +19,17 @@ public class CustomPanel extends JPanel {
         this.path = path;
     }
 
+    /**
+     * 绘制背景图片，允许这个JPanel可以在图片上添加其他组件
+     *
+     * @param g 绘图对象
+     */
     @Override
     protected void paintComponent(Graphics g) {
+        //super.paintComponent(g);
+        //ImageIcon icon = new ImageIcon(CustomPanel.class.getResource(path));
+        //icon.paintIcon(this, g, 0, 0);
+        //this.setOpaque(true);
         super.paintComponent(g);
         Image bg = null;
         try {

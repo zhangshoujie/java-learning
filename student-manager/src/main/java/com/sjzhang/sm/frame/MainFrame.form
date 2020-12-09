@@ -2,7 +2,7 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.sjzhang.sm.frame.MainFrame">
   <grid id="27dc6" binding="mainPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
     <constraints>
-      <xy x="17" y="20" width="864" height="528"/>
+      <xy x="17" y="20" width="952" height="528"/>
     </constraints>
     <properties>
       <background color="-8631570"/>
@@ -202,7 +202,7 @@
             </properties>
             <border type="none"/>
             <children>
-              <grid id="95d0b" layout-manager="GridLayoutManager" row-count="1" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+              <grid id="95d0b" layout-manager="GridLayoutManager" row-count="1" column-count="7" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
                 <margin top="0" left="0" bottom="0" right="0"/>
                 <constraints border-constraint="North"/>
                 <properties>
@@ -246,18 +246,26 @@
                   </component>
                   <component id="3fb90" class="javax.swing.JButton" binding="新增学生Button" default-binding="true">
                     <constraints>
-                      <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
                       <text value="新增学生"/>
                     </properties>
                   </component>
-                  <component id="a3e10" class="javax.swing.JButton" binding="批量导入Button" default-binding="true">
+                  <component id="a3e10" class="javax.swing.JButton" binding="导出Button" default-binding="true">
                     <constraints>
-                      <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                      <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                     </constraints>
                     <properties>
-                      <text value="批量导入"/>
+                      <text value="导出"/>
+                    </properties>
+                  </component>
+                  <component id="f7679" class="javax.swing.JButton" binding="重置Button" default-binding="true">
+                    <constraints>
+                      <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                    </constraints>
+                    <properties>
+                      <text value="重置"/>
                     </properties>
                   </component>
                 </children>
@@ -300,7 +308,7 @@
             <constraints border-constraint="Center"/>
             <properties>
               <preferredSize width="24" height="24"/>
-              <visible value="true"/>
+              <visible value="false"/>
             </properties>
             <border type="none"/>
             <children>
@@ -333,7 +341,7 @@
                   <text value="新增"/>
                 </properties>
               </component>
-              <component id="d1612" class="javax.swing.JLabel" binding="LogoLabel">
+              <component id="d1612" class="javax.swing.JLabel" binding="logoLabel">
                 <constraints>
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false">
                     <preferred-size width="150" height="150"/>
@@ -364,7 +372,16 @@
           <background color="-4209475"/>
         </properties>
         <border type="none"/>
-        <children/>
+        <children>
+          <component id="3ad32" class="javax.swing.JLabel" binding="timeLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Label"/>
+            </properties>
+          </component>
+        </children>
       </grid>
     </children>
   </grid>

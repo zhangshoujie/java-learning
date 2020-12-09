@@ -34,4 +34,10 @@ public class ClazzDaoTest {
     public void insert() {
 
     }
+
+    @Test
+    public void selectAll() throws Exception {
+        List<Clazz> clazzList = clazzDao.selectAll();
+        System.out.println(clazzList);
+    }
 }

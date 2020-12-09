@@ -22,8 +22,8 @@ public class AliOSSUtil {
     public static String ossUpload(File file) {
         String bucketDomain = "https://zsj-bucket.oss-cn-beijing.aliyuncs.com/";
         String endpoint = "https://oss-cn-beijing.aliyuncs.com";
-        String accessKeyId = "LTAI4GDJ5SVFXCXrXN41vW82";
-        String accessKeySecret = "1mQBTt7JBASln5FRXoDVDNctrlp9Bz";
+        String accessKeyId = "LTAI4G5VqtyPxuzZQxhtm1vx";
+        String accessKeySecret = "bM0ppzRyrYeBD2GJbb5khQnyip4Pi6";
         String bucketName = "zsj-bucket";
         String fileDir = "picture/";
         String fileName = file.getName();

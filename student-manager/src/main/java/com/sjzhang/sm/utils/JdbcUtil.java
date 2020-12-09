@@ -9,7 +9,7 @@ import java.sql.*;
  * @Date 2020/11/14
  **/
 public class JdbcUtil {
-    private static final String URL = "jdbc:mysql://127.0.0.1:3306/student_manager?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT";
+    private static final String URL = "jdbc:mysql://127.0.0.1:3306/student_manager?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false&serverTimezone=GMT%2B8";
 
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
