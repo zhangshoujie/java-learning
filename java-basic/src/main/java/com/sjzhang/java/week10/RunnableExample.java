@@ -8,12 +8,12 @@ import sun.security.krb5.internal.Ticket;
  * @Author 张守杰
  * @Date 2020/12/7
  **/
-public class ThreadExample {
+public class RunnableExample {
     public static void main(String[] args) {
         Ticket t = new Ticket();
-        Thread th1 = new Thread(t, "窗口A");
-        Thread th2 = new Thread(t, "窗口B");
-        Thread th3 = new Thread(t, "窗口C");
+        Thread th1 = new Thread(t, "001");
+        Thread th2 = new Thread(t, "002");
+        Thread th3 = new Thread(t, "003");
 
         th1.start();
         th2.start();
@@ -21,25 +21,30 @@ public class ThreadExample {
 
     }
 
-    class Ticket implements Runnable{
-
-        private int TicketNum = 100; //100张火车票
+    static class Ticket implements Runnable{
+        private int ticketNum = 5;
         private boolean flag = true;
-        private synchronized void sale()
-        {
-            if(TicketNum<=0)
-            {
+        private synchronized void sale() {
+            if(ticketNum<=0) {
                 flag = false;
                 return ;
             }
-            TicketNum--;
-            System.out.println(Thread.currentThread().getName()+"卖了一张票，还剩"+TicketNum+"张票。");
+            ticketNum--;
+            System.out.println("窗口" + Thread.currentThread().getName()+"卖了一张票，还剩"+ticketNum+"张票。");
         }
-
         @Override
         public void run() {
             while(flag)
             {
                 sale();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
         }
+
+    }
     }

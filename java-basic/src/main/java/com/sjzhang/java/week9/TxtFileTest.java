@@ -23,6 +23,7 @@ public class TxtFileTest {
         Writer out = new FileWriter(file, true);
         out.write(chars);
         out.close();
+        
         //2.BufferedWriter
         String b = scanner.nextLine();
         String fileName1 = UUID.randomUUID().toString();
